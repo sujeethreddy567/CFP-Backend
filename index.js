@@ -21,7 +21,7 @@ app.use(express.json());
 //route Middle wares
 app.use('/api/user/',authRoute);
 app.use('/user/',postRoute);
-
-app.listen(process.env.port,()=>{
-    console.log('Server Running at Port :8080')
+var port = process.env.port || 8080
+app.listen(port,()=>{
+    console.log('Server Running at Port ',port)
 })
